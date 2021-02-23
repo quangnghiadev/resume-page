@@ -1,89 +1,455 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Century Gothic";
+	panose-1:2 11 5 2 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:16.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:120%;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;}
+h1.CxSpFirst
+	{mso-style-link:"Heading 1 Char";
+	margin-top:16.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:120%;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;}
+h1.CxSpMiddle
+	{mso-style-link:"Heading 1 Char";
+	margin:0in;
+	line-height:120%;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;}
+h1.CxSpLast
+	{mso-style-link:"Heading 1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:120%;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;
+	font-style:italic;}
+h2.CxSpFirst
+	{mso-style-link:"Heading 2 Char";
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;
+	font-style:italic;}
+h2.CxSpMiddle
+	{mso-style-link:"Heading 2 Char";
+	margin:0in;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;
+	font-style:italic;}
+h2.CxSpLast
+	{mso-style-link:"Heading 2 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;
+	font-style:italic;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	font-size:13.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Century Gothic",sans-serif;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Century Gothic",sans-serif;
+	letter-spacing:1.05pt;
+	font-weight:bold;
+	font-style:italic;}
+p.ContactInfo, li.ContactInfo, div.ContactInfo
+	{mso-style-name:"Contact Info";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:46.0pt;
+	margin-left:0in;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+p.ContactInfoCxSpFirst, li.ContactInfoCxSpFirst, div.ContactInfoCxSpFirst
+	{mso-style-name:"Contact InfoCxSpFirst";
+	margin:0in;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+p.ContactInfoCxSpMiddle, li.ContactInfoCxSpMiddle, div.ContactInfoCxSpMiddle
+	{mso-style-name:"Contact InfoCxSpMiddle";
+	margin:0in;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+p.ContactInfoCxSpLast, li.ContactInfoCxSpLast, div.ContactInfoCxSpLast
+	{mso-style-name:"Contact InfoCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:46.0pt;
+	margin-left:0in;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+p.Name, li.Name, div.Name
+	{mso-style-name:Name;
+	mso-style-link:"Name Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	text-transform:uppercase;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+p.NameCxSpFirst, li.NameCxSpFirst, div.NameCxSpFirst
+	{mso-style-name:NameCxSpFirst;
+	mso-style-link:"Name Char";
+	margin:0in;
+	font-size:18.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	text-transform:uppercase;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+p.NameCxSpMiddle, li.NameCxSpMiddle, div.NameCxSpMiddle
+	{mso-style-name:NameCxSpMiddle;
+	mso-style-link:"Name Char";
+	margin:0in;
+	font-size:18.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	text-transform:uppercase;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+p.NameCxSpLast, li.NameCxSpLast, div.NameCxSpLast
+	{mso-style-name:NameCxSpLast;
+	mso-style-link:"Name Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;
+	text-transform:uppercase;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+span.NameChar
+	{mso-style-name:"Name Char";
+	mso-style-link:Name;
+	text-transform:uppercase;
+	letter-spacing:1.05pt;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Century Gothic",sans-serif;
+	font-style:italic;}
+.MsoChpDefault
+	{font-family:"Century Gothic",sans-serif;
+	color:#4B3A2E;}
+.MsoPapDefault
+	{margin-bottom:3.0pt;
+	line-height:120%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:57.55pt 56.15pt 57.55pt 56.15pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+</head>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+<body lang=EN-US style='word-wrap:break-word'>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+<div class=WordSection1>
+
+<p class=Name>Nghia Nguyen Quang</p>
+
+<p class=ContactInfo>65/12 Chu Van An, Binh Thanh District, HCMC | 0981 664 065
+| quangnghiadev@gmail.com</p>
+
+<h1>Objective</h1>
+
+<p class=MsoNormal style='margin-bottom:9.0pt'>I want to work in a company with
+a modern, dynamic and challenging work environment. A place where I can develop
+myself as well as my career path.</p>
+
+<h1>Education</h1>
+
+<h2>University of Information Technology</h2>
+
+<p class=MsoNormal>Major: Software Engineering</p>
+
+<p class=MsoNormal>GPA: 8.58/10</p>
+
+<p class=MsoNormal>English: Intermediate Level – TOEIC 645</p>
+
+<h1>Experience</h1>
+
+<h2>Teqnological Asia Company Limited</h2>
+
+<h3>iOS Developer / Sep 2018 – now</h3>
+
+<p class=MsoNormal>&quot;<b>Artermis</b>&quot; is an application that allows
+users to purchase financial investment packages. Users will take surveys to
+determine which package to buy. Each package will have different input rates
+for each financial item. History of changing account balances, profit, and loss
+will be shown through charts.</p>
+
+<p class=MsoNormal>- Build an application with VIPER architecture</p>
+
+<p class=MsoNormal>- Use Alamofire and Operation Queue to build Network Layer
+for endpoint structure, request manager (max concurrent request per time,
+suppend or cancel all requests in queues ..)</p>
+
+<p class=MsoNormal>- Use SnapKit to implement User Interface</p>
+
+<p class=MsoNormal>- Manage dependency library by Swift Package Manager</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&quot;<b>Stock</b>&quot; is a social network application,
+where everyone can find information about stocks in the market, discuss with
+another user with forums, read the latest news of stocks, view stock price
+history via the chart. Users will use point receive from register account,
+invite friends, watch ads, ... join a mini-game in the app, and have a chance
+to get a gift.</p>
+
+<p class=MsoNormal>- Join the project as a core member, instruct a fresher
+developer. </p>
+
+<p class=MsoNormal>- Build app architecture with MVVM pattern, implement
+binding data by RxSwift</p>
+
+<p class=MsoNormal>- Use Firebase Service to manage authentication, phone
+verification. </p>
+
+<p class=MsoNormal>- Integrate Google AdMob to supply advertisement</p>
+
+<p class=MsoNormal>- Apply dependency injection for testing purpose</p>
+
+<p class=MsoNormal>- Improve the CI/CD pipeline with code signing (Fastlane
+match via git storage)</p>
+
+<p class=MsoNormal>- Research and apply the Unit Test for some modules</p>
+
+<p class=MsoNormal>- Delivery app from source code to AppStore</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&quot;<b>BitTrade</b>&quot; - A Trading Cryptocurrency and
+Forex App. Users can trade over 30 currency pairs with real money or try a
+virtual market to practice. App also provides the latest news, price history,
+chart indicator, ...</p>
+
+<p class=MsoNormal>- Join as maintainer role</p>
+
+<p class=MsoNormal>- Maintain and develop new features</p>
+
+<p class=MsoNormal>- Build the CI/CD pipeline with Fastlane, Fabric, and
+GitLabCI</p>
+
+<h2>&nbsp;</h2>
+
+<h2>Self Project </h2>
+
+<h3>Aug 2018 – May 2019</h3>
+
+<p class=MsoNormal>&quot;<b>ShipMyDishes</b>&quot; helps restaurants connect
+with users, who want to order food online. This project contains 3 mobile
+applications. The user app allows users to order a variety of dishes of many
+restaurants with a multi add-on while the merchant app will help the restaurant
+manager manage orders. The app for the driver will help them to receive
+shipping orders. </p>
+
+<p class=MsoNormal>- Develop an application with MVVM pattern</p>
+
+<p class=MsoNormal>- Integrate Google Map SDK, location searching/detecting/routing</p>
+
+<p class=MsoNormal>- Update Driver location on User application continuously</p>
+
+<p class=MsoNormal>- Identify user via Firebase Authentication and phone
+verification, support login via social account (Facebook, Google, Apple)</p>
+
+<p class=MsoNormal>- Integrate Stripe payment service</p>
+
+<p class=MsoNormal>- Implement push notification with Firebase Messaging</p>
+
+<p class=MsoNormal>- Support print order bill for Merchant app via thermal
+printer</p>
+
+<p class=MsoNormal>- Support UI for both iPhone and iPad devices</p>
+
+<p class=MsoNormal>- Build the CI/CD pipeline with Fastlane, Firebase
+Distribution and BitriseCI</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>BruMob Company Limited</h2>
+
+<h3>iOS Developer / Feb 2018 – Aug 2018</h3>
+
+<p class=MsoNormal>&quot;<b>My Vault</b>” - The app help users to protect their
+photos and videos. All data will be upload to the cloud.</p>
+
+<p class=MsoNormal>- Work with Restful API and a JSON object</p>
+
+<p class=MsoNormal>- Support Core Data migration</p>
+
+<p class=MsoNormal>- Fix bugs and implement new features</p>
+
+<p class=MsoNormal>- Join the development process on both Android (Kotlin
+programming language) and iOS platform</p>
+
+<h1>Specialized skills</h1>
+
+<p class=MsoNormal>Programming Language: Swift</p>
+
+<p class=MsoNormal>App Architecture: MVVM, VIP, VIPER</p>
+
+<p class=MsoNormal>Framework: SnapKit, RxSwift, Alamofire</p>
+
+<p class=MsoNormal>CI/CD: Fastlane, Fabric, Firebase Distribution, Bitrise,
+GitlabCI</p>
+
+<h1>Soft skills</h1>
+
+<p class=MsoNormal>Good command of English </p>
+
+<p class=MsoNormal>Teamwork, flexibility in taking any duties </p>
+
+<p class=MsoNormal>Willingness to developing related job knowledge and skills</p>
+
+<h1>Achievements</h1>
+
+<p class=MsoNormal>2015 – 2016 – 2017                Phu Yen Brilliant Students
+Awarding </p>
+
+<p class=MsoNormal>2014 – 2015 – 2016                Scholarship for excellent
+students at university</p>
+
+<p class=MsoNormal>2018                                        Graduated with
+Honors</p>
+
+</div>
+
+</body>
+
 </html>
